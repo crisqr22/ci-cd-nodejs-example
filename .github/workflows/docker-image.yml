@@ -59,8 +59,8 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: Cicdexample-env
-          environment_name: ci-cd-example
+          application_name: ci-cd-example
+          environment_name: Cicdexample-env
           version_label: ${{steps.timestamp.outputs.timestamp}}
           region: ${{ secrets.EB_REGION }}
           deployment_package: docker-compose.yml

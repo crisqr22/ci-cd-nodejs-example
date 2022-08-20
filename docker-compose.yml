@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  nginx:
+    image: cquinro22/ci-test:v1
+    restart: always
+    environment:
+      - FRONTEND_URI=${FRONTEND_URI}
+    ports:
+      - "7777:3000"

@@ -1,0 +1,11 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "cquinro22/ci-test:v2"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "3000"
+    }
+  ]
+}

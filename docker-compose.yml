@@ -3,7 +3,7 @@ services:
   nginx:
     image: cquinro22/ci-test:latest
     restart: always
-    environment:
-      - URL_ENV=http://google.co
+    env_file:
+        - .env
     ports:
       - "80:3000"

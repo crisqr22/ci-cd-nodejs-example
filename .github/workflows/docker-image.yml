@@ -56,6 +56,14 @@ jobs:
         with:
           URL_ENV: ${{ secrets.URL_ENV }}
 
+      - name: Make envfile
+        uses: SpicyPizza/create-envfile@v1.3
+        with:
+          URL_ENV: ${{ secrets.URL_ENV }}
+          some_other_variable: foobar
+          file_name: .env
+          fail_on_empty: false
+
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v16
         with:

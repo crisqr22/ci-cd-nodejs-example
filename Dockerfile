@@ -16,6 +16,8 @@ FROM node:14.10-alpine
 
 WORKDIR /app
 
+ARG URL_ENV
+
 COPY --from=build /app/dist ./dist
 COPY --from=build /app/package.json ./package.json
 COPY --from=build /app/node_modules ./node_modules

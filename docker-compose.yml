@@ -3,7 +3,7 @@ services:
   nginx:
     image: cquinro22/ci-test:latest
     restart: always
-    env_file:
-        - .env
+    environment:
+      - URL_ENV=${secrets.URL_ENV}
     ports:
       - "80:3000"

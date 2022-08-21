@@ -43,7 +43,7 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
           secrets: |
-            URL_ENV=${{ secrets.URL_ENV }}
+            "URL_ENV=${{ secrets.URL_ENV }}"
 
       - name: Move cache
         run: |

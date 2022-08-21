@@ -61,7 +61,7 @@ jobs:
         with:
           URL_ENV: ${{ secrets.URL_ENV }}
           some_other_variable: foobar
-          file_name: .env
+          file_name: .app.env
           fail_on_empty: false
 
       - name: Deploy to EB

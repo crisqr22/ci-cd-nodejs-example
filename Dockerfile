@@ -4,6 +4,7 @@ RUN set -x \
     && apk upgrade \
     && apk add --no-cache --update \
         openssl
+ARG URL_ENV
 
 WORKDIR /app
 

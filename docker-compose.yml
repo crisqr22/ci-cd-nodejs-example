@@ -1,8 +1,6 @@
 version: "3.8"
 services:
   nginx:
-    env_file:
-      - ./app.env
     image: cquinro22/ci-test:latest
     restart: always
     ports:

@@ -8,6 +8,8 @@ on:
 
 jobs:
   _TESTS_:
+    name: Run tests
+    environment: ci
     runs-on: ubuntu-latest
     steps:
       # Checkout the Repo
@@ -29,7 +31,7 @@ jobs:
       # Run tests
       - run: npm run test
         env:
-          URL_ENV: "https://ci"
+          URL_ENV: ${{ secrets.URL_ENV }}
 
   _BUILD_IMAGE_:
     needs: _TESTS_

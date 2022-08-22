@@ -7,7 +7,29 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build_docker_images:
+  _TESTS_:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the Repo
+      - uses: actions/checkout@v2
+
+      # Install Node 12
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      # Install dependencies
+      - run: npm ci
+
+      # Run linter
+      - run: npm run lint
+
+      # Run tests
+      - run: npm run test
+
+  _BUILD_IMAGE_:
+    needs: _TESTS_
     name: Build docker images
     runs-on: ubuntu-latest
     steps:
